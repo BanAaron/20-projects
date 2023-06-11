@@ -34,34 +34,35 @@ def main():
             print('Please enter a valid move.')
             continue
 
+        # clear the terminal
         os.system('cls||clear')
+
         # display each player choice
         print('---')
         print(f'You: {valid_moves[users_move]}')
         print(f'AI: {valid_moves[ai_move]}')
         print('---')
 
-        # check if we have a winner
+        # check win conditions
         if users_move == ai_move:
             print('Draw.')
-        # rocks
+        # rock
         elif users_move == Moves.rock and ai_move == Moves.scissors:
             print('You Win!')
             user_score += 1
-        # papers
+        # paper
         elif users_move == Moves.paper and ai_move == Moves.rock:
             print('You win!')
             user_score += 1
-        # scissors
+        # scissor
         elif users_move == Moves.scissors and ai_move == Moves.paper:
             print('You win!')
             user_score += 1
-
         else:
             print('You Lose.')
             ai_score += 1
 
-        print()  # new line
+        print()  # print a new line to add space between each round
 
 
 if __name__ == '__main__':
