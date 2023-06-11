@@ -17,7 +17,7 @@ STARTING_LIVES: int = max(8, secret_word_length // 3 * 2)
 
 def main(current_lives=STARTING_LIVES):
     print('Welcome to Hangman.')
-    while True:
+    while current_lives > 0:
         print(''.join(secret_word_hidden))
         print('Previous guesses: ', end='')
         print(*seen, sep=', ')
@@ -53,12 +53,7 @@ def main(current_lives=STARTING_LIVES):
         if not found:
             current_lives -= 1
 
-        # check if we have died
-        if current_lives <= 0:
-            print(f'Sorry, you lost. The secret word was {secret_word}.')
-            break
-        else:
-            print()
+    print(f'Sorry, you lost. The secret word was {secret_word}.')
 
 
 if __name__ == '__main__':
