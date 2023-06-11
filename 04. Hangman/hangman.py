@@ -6,7 +6,7 @@ with open('words.txt') as file:
 # choose a random word
 secret_word: str = choice(words).removesuffix('\n')
 secret_word_length = len(secret_word)
-secret_word_hidden: list[str] = ['~'] * secret_word_length
+secret_word_hidden: list[str] = ['_'] * secret_word_length
 
 # keep track of guesses in seen
 seen: list[str] = []
@@ -16,12 +16,12 @@ STARTING_LIVES: int = max(8, secret_word_length // 3 * 2)
 
 
 def main(current_lives=STARTING_LIVES):
-    print('Welcome to Hangman.')
+    print('Welcome to Hangman.\n')
     while current_lives > 0:
         print(''.join(secret_word_hidden))
+        print(f'Lives: {current_lives}')
         print('Previous guesses: ', end='')
         print(*seen, sep=', ')
-        print(f'Lives: {current_lives}')
         guess: str = input('New guess: ').lower().strip()
 
         if not guess.isalpha():
