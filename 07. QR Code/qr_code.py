@@ -1,7 +1,7 @@
 import sys
+from sys import argv
 
 import qrcode
-from sys import argv
 
 
 class QrCode:
