@@ -19,7 +19,7 @@ def main(current_lives=STARTING_LIVES):
     print('Welcome to Hangman.\n')
 
     while current_lives > 0:
-        print(''.join(secret_word_hidden))
+        print(' '.join(secret_word_hidden))
         print(f'Lives: {current_lives}')
         print('Previous guesses: ', end='')
         print(*seen, sep=', ')
@@ -55,7 +55,8 @@ def main(current_lives=STARTING_LIVES):
         if not found:
             current_lives -= 1
 
-    print(f'Sorry, you lost. The secret word was {secret_word}.')
+    if current_lives == 0:
+        print(f'Sorry, you lost. The secret word was {secret_word}.')
 
 
 if __name__ == '__main__':
