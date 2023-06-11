@@ -7,11 +7,11 @@ def roll_dice(amount: int) -> list[int]:
 
 def main():
     while True:
-        user_input: str = input('How many dice would you like to roll? ')
+        user_input: str = input("How many dice would you like to roll? ")
 
         # if the user enters 'exit', we should end the program
-        if user_input.lower() == 'exit':
-            print('Thanks for playing!')
+        if user_input.lower() == "exit":
+            print("Thanks for playing!")
             break
 
         # try convert to int
@@ -20,14 +20,14 @@ def main():
             if user_input_as_int <= 0:
                 raise ValueError
         except ValueError:
-            print('Please inter a valid integer.')
+            print("Please inter a valid integer.")
             continue
 
         rolls: list[int] = roll_dice(user_input_as_int)
         # unpack with the splat (*) operator
-        print(*rolls, sep=', ')
-        print(f'Total: {sum(rolls)}')
+        print(*rolls, sep=", ")
+        print(f"Total: {sum(rolls)}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
