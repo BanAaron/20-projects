@@ -1,6 +1,6 @@
 # 20-projects
 
-This is a repo contains my implementations of the 20 projects in 
+This repo contains my implementations of the 20 projects in 
 [this course](https://www.udemy.com/course/great-python-projects/) by Federico Azzurro.
 
 ## [01. Mad-libs](01.%20Madlibs/madlibs.py)
